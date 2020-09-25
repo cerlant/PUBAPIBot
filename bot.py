@@ -3,7 +3,6 @@ import logging
 import ccxt.binance as binance
 from telegram.ext import Updater, CommandHandler, run_async
 
-URL = os.environ['URL']
 TOKEN = os.environ['TOKEN']
 PORT = os.environ['PORT']
 USE_WEBHOOK =  os.environ['USE_WEBHOOK'] or False
@@ -55,7 +54,7 @@ def main():
         updater.start_webhook(listen="0.0.0.0",
                               port=PORT,
                               url_path=TOKEN)
-        updater.bot.set_webhook(URL + TOKEN)
+        updater.bot.set_webhook('https://pubapibot.herokuapp.com/' + TOKEN)
         logger.info('running on webhook...')
     else:
         updater.start_polling()
