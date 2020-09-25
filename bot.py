@@ -43,8 +43,8 @@ def main():
 
     dp = updater.dispatcher
 
-	dp.add_handler(CommandHandler('start', start))
-	dp.add_handler(CommandHandler('get_ticker', get_ticker))
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(CommandHandler('get_ticker', get_ticker))
 
 
     # log all errors
